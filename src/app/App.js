@@ -10,13 +10,29 @@ import Author from "../components/Author";
 import Profile from "../components/Profile";
 
 import "./App.css";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
     <Router>
       <Header />
-      <main>{/* Add Routes here! */}</main>
+      <main>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/sign-up">
+          <SignUp />
+        </Route>
+        <Route path="/articles">
+          <Articles />
+        </Route>
+        <Route path="/categories">
+          <Categories />
+        </Route>
+        <Route path="/profile">
+          <Profile />
+        </Route>
+      </main>
       <Footer />
     </Router>
   );
