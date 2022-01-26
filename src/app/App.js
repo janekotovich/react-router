@@ -10,16 +10,15 @@ import Author from "../components/Author";
 import Profile from "../components/Profile";
 
 import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <Router>
       <Header />
-      <main>
-        {/* Add Routes here! */}
-      </main>
+      <main>{/* Add Routes here! */}</main>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
