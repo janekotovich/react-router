@@ -27,6 +27,9 @@ function App() {
           <Route path="/articles/:title">
             <Article />
           </Route>
+          <Route path="/articles">
+            <Articles />
+          </Route>
           <Route path="/authors/:name">
             <Author />
           </Route>
