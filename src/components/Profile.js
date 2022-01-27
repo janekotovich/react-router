@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, useRouteMatch } from "react-router-dom";
 import {
   selectCurrentUser,
   selectIsLoggedIn,
@@ -10,6 +10,7 @@ import EditProfileForm from "./EditProfileForm";
 export default function Profile() {
   const currentUser = useSelector(selectCurrentUser);
   const loggedIn = useSelector(selectIsLoggedIn);
+  let { path, url } = useRouteMatch();
 
   // call useRouteMatch() to get the url and path
 
@@ -18,8 +19,8 @@ export default function Profile() {
   return (
     <main>
       <h1>{currentUser.username}</h1>
-      <Link to={"/profile/edit"}>Edit</Link>
-      <Route path="/profile/edit">
+      <Link to={`${url}/edit`}>Edit</Link>
+      <Route path={`${path}/edit`}>
         <EditProfileForm />
       </Route>
     </main>
