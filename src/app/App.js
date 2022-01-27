@@ -15,6 +15,7 @@ import {
   Route,
   Link,
   NavLink,
+  Switch,
 } from "react-router-dom";
 
 function App() {
@@ -22,27 +23,27 @@ function App() {
     <Router>
       <Header />
       <main>
-        <Route path="/articles/:title">
-          <Article />
-        </Route>
-        <Route path="/authors/:name">
-          <Author />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/sign-up">
-          <SignUp />
-        </Route>
-        <Route path="/articles">
-          <Articles />
-        </Route>
-        <Route path="/categories">
-          <Categories />
-        </Route>
-        <Route path="/profile">
-          <Profile />
-        </Route>
+        <Switch>
+          <Route path="/articles/:title">
+            <Article />
+          </Route>
+          <Route path="/authors/:name">
+            <Author />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/sign-up">
+            <SignUp />
+          </Route>
+
+          <Route path="/categories">
+            <Categories />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+        </Switch>
       </main>
       <Footer />
     </Router>
